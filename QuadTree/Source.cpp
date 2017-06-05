@@ -5,9 +5,11 @@ class foo {
 	int x;
 };
 int main() {
-	Utils::Rectangle rect(10,10,10,10);
-	Utils::QuadTree qtree(0, rect);
+	Utils::Rectangle rect1(0,0,10,10);
+	Utils::Rectangle rect2(1, 1, 5, 5);
+
+	Utils::QuadTree qtree(0, rect1);
 	qtree.clear();
-	std::cout << "Hello" << std::endl;
+	std::cout << rect1.isInside(rect2) << std::endl;
 	system("pause");
 }
