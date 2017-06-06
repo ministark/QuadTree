@@ -10,7 +10,7 @@ namespace Utils {
 	private:
 		// Variables
 		std::vector<Rectangle*> objects;
-		int max_objects = 10;
+		int max_objects = 1;
 		int max_levels = 10;
 		int level;
 		QuadTree* nodes[4];
