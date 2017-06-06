@@ -17,13 +17,26 @@ void Utils::QuadTree::split()
 	nodes[3] = (new QuadTree(level + 1, q4));
 }
 
+void Utils::QuadTree::retrieve(std::vector<Rectangle*>& allobjs)
+{
+	for (size_t i = 0; i < objects.size(); i++)
+		allobjs.push_back(objects[i]);
+
+	if (nodes[0] != NULL) {
+		nodes[0]->retrieve(allobjs);
+		nodes[1]->retrieve(allobjs);
+		nodes[2]->retrieve(allobjs);
+		nodes[3]->retrieve(allobjs);
+	}
+}
+
 
 int Utils::QuadTree::getIndex( Rectangle& rect)
 {
 	if ( rect.isInside(nodes[0]->bounds) ){
 		return 0;
 	}
-	else if ( rect.isInside(nodes[1]->bounds) ) {
+	else if (rect.isInside(nodes[1]->bounds)) {
 		return 1;
 	}
 	else if (rect.isInside(nodes[2]->bounds)) {

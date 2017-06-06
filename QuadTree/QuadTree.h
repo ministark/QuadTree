@@ -16,6 +16,7 @@ namespace Utils {
 		QuadTree* nodes[4];
 		// Function
 		void split();
+		void retrieve(std::vector<Rectangle*> &);
 		int  getIndex(Rectangle&);
 	public:
 		Utils::Rectangle bounds;
@@ -23,7 +24,6 @@ namespace Utils {
 		QuadTree(int lvl, Utils::Rectangle pbounds);
 		void clear();
 		void insert(Rectangle *);
-		void retrieve();
 		void setMaxObjects(int obj);
 		void setMaxLevels(int lvl);
 		~QuadTree();
