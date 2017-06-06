@@ -72,7 +72,7 @@ void Utils::QuadTree::insert(Rectangle *obj)
 	if (objects.size() > max_objects && nodes[0] == NULL) {
 		split();
 		int end = objects.size() - 1, ite = 0;
-		while (ite != end) {
+		while (ite <= end) {
 			int inx = getIndex(*objects[ite]);
 			if (inx != -1) {
 				nodes[inx]->insert(objects[ite]);
